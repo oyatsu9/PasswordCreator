@@ -10,6 +10,13 @@ namespace PasswordCreator
     {
         static void Main(string[] args)
         {
+            var count = 12;
+            var random = new Random();
+            ILetterFactory factory = new AllLetterFactory();
+            PasswordGenerator generator = new PasswordGenerator(random);
+            var password = generator.MakePassword(count,factory);
+            Console.WriteLine(password);
+
         }
     }
 }
